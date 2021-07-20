@@ -1,0 +1,45 @@
+.tagbox { 
+/*
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+	*/
+ 
+}
+.tagbox ul{
+	  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.tagbox ul li{
+	  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+.tagbox ul li img{
+    max-width: 150px;
+    height: auto;
+    display: block;
+	border-radius: 10px;
+}
+.tagbox ul li a{
+	  
+    font-size: 14px;
+    line-height: 20px;
+    padding: 15px 20px;
+}
+a.taglink  { 
+    padding: 10px 20px;
+    border-radius: 2px;
+    border: 1px solid #818695;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+ 
+.tagbox a, .tagbox a:visited, .tagbox a:active { 
+text-decoration:none;
+}
+ 
