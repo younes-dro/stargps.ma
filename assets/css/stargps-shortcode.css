@@ -42,4 +42,46 @@ a.taglink  {
 .tagbox a, .tagbox a:visited, .tagbox a:active { 
 text-decoration:none;
 }
+
+@media screen and (max-width:768px){
+    .tagbox h3{
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .tagbox ul {
+        display: flex;
+        flex-direction: column;
+    }
+    .tagbox ul li {
+        display: flex;
+        text-align: center;
+    }
+    .tagbox ul li a {
+        font-size: 15px;
+        line-height: 30px;
+        padding: 15px 20px;
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .tagbox ul li a img {
+        max-width: 200px;
+        height: auto;
+        display: block;
+        border-radius: 10px;
+        margin: 0 auto 8px;
+        padding-bottom: 15px;
+    }
+    
+    /* tag link */
+    .tagbox a.taglink {
+        padding: 15px 20px;
+        border-radius: 2px;
+        border: 1px solid #818695;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        display: inline-block;
+        font-size: 1rem;
+    }    
+}
  
