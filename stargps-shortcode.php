@@ -157,8 +157,8 @@ class StarGPS_ShortCode {
 
     public function frontend_scripts() {
 
-        wp_register_style('wc-osp-frontend', STARGPSSHORTCODE_PLUGIN_URL . '/assets/css/stargps_shortcode.css', array(), time());
-        wp_enqueue_style('wc-osp-frontend');
+        wp_register_style('stargps-shortcode', STARGPSSHORTCODE_PLUGIN_URL . '/assets/css/stargps-shortcode.css', array(), time());
+        wp_enqueue_style('stargps-shortcode');
     }
 
 }
