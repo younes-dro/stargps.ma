@@ -83,6 +83,33 @@ class StarGPS_ShortCode {
         $html = '';
         $html .= '<div class="section"><div class="section_wrapper mcb-section-inner tagbox">';
         
+        // New Products ( Nouveauté ) :
+        $html .= '<h3>Nouveauté :</h3>';
+        $new_products = array( 
+            'post_type' => 'product', 
+            'posts_per_page' => 1, 
+            'product_cat' => 'nouveaute', 
+            'orderby' => 'ID',
+            'order' => 'DESC'   );
+        $new_products_loop = new WP_Query( $new_products );
+        $html .= '<ul>';
+        while ( $new_products_loop->have_posts() ) : 
+            $new_products_loop->the_post();
+            $html .= '<li>';
+            $html .= '<a class="taglink" href="'.get_permalink( $new_products_loop->post->ID ).'" title="'.esc_attr( $new_products_loop->post->post_title ).'">';
+//            if (has_post_thumbnail( $new_products_loop->post->ID )) {
+                $html .= get_the_post_thumbnail($new_products_loop->post->ID, 'shop_catalog');
+//            } else {
+//                $html .= '<img src="'.woocommerce_placeholder_img_src().'" alt="Placeholder" width="300px" height="300px" />';
+//            }
+            //$html .= '<h3>'.get_the_title() .'</h3>';
+            $html .= '</a>';
+            $html .= '</li>';
+            
+        endwhile;
+        wp_reset_query();
+        $html .= '</ul>';
+        
         // Products tags :
         $terms = get_terms( 'product_tag' );
         

@@ -18,6 +18,12 @@
   flex-basis: 100%;
   flex: 1;
 }
+.tagbox ul li.nouveaute-item{
+    align-items:center;
+}
+.tagbox ul li.nouveaute-item a{
+    border: none;
+}
 .tagbox ul li img{
     max-width: 150px;
     height: auto;
