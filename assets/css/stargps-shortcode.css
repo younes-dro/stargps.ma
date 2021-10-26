@@ -59,7 +59,7 @@ text-decoration:none;
     .tagbox ul li a {
         font-size: 15px;
         line-height: 30px;
-        padding: 15px 20px;
+        padding: 15px 0px;
         display: block;
         width: 100%;
         margin: 0 auto;
@@ -70,7 +70,7 @@ text-decoration:none;
         display: block;
         border-radius: 10px;
         margin: 0 auto 8px;
-        padding-bottom: 15px;
+        /* padding-bottom: 15px; */
     }
     
     /* tag link */

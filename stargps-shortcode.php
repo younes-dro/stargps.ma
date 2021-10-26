@@ -21,6 +21,7 @@ class StarGPS_ShortCode {
     private static $instance;
 
     function __construct() {
+        add_filter( 'use_widgets_block_editor', '__return_false' );
         add_shortcode('stargps_shortcode', array($this, 'run_shortcode'));
         add_action('wp_enqueue_scripts', array($this, 'frontend_scripts'));
     }
@@ -159,6 +160,8 @@ class StarGPS_ShortCode {
 
         wp_register_style('stargps-shortcode', STARGPSSHORTCODE_PLUGIN_URL . '/assets/css/stargps-shortcode.css', array(), time());
         wp_enqueue_style('stargps-shortcode');
+                wp_register_script('stargps-shortcode-js', STARGPSSHORTCODE_PLUGIN_URL . '/assets/js/stargps-shortcode.js', array('jquery'), time());
+        wp_enqueue_script('stargps-shortcode-js');
     }
 
 }
@@ -188,7 +191,7 @@ function stargps_shortcode_theme_header_metadata() {
 add_action( 'wp_head', 'stargps_shortcode_theme_header_metadata' );
 function stargps_shortcode_theme_filter_wp_title( $title ){
 	if(is_product() || is_product_tag() || is_product_category() ){
-		return " Vente et installation de " . $title . " au Maroc" ;
+		return  $title . " au Maroc" ;
 	}
 	return $title;
 	
